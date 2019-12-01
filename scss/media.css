@@ -1,0 +1,10 @@
+@media (max-width: 425px) {
+  form {
+    width: 80%;
+  }
+  form .productsList {
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=media.css.map */

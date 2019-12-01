@@ -1,0 +1,24 @@
+@media screen and (max-width: 875px) {
+  form {
+    width: 80%;
+
+    .productsList {
+      flex-direction: column;
+      justify-content: center;
+
+      .product {
+        width: 100%;
+      }
+    }
+
+    button {
+      width: 30%;
+    }
+  }
+
+  .confirmBlock {
+    form {
+      width: 65%;
+    }
+  }
+}

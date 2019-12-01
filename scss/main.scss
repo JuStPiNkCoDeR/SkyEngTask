@@ -1,0 +1,121 @@
+@import "vars";
+@import "mixins";
+@import "anims";
+
+body {
+  background: $main-bg;
+  color: $main-color;
+
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.upperCase {
+  text-transform: uppercase;
+}
+
+form {
+  margin: 0 auto;
+  width: 60%;
+  background: #fff;
+  padding: 20px 10px;
+  @include shadow(0, 0, 20px, 0, #0009);
+
+  .productsList {
+    display: flex;
+    justify-content: space-around;
+
+    .product {
+      width: 24%;
+    }
+  }
+
+  .product {
+    text-align: center;
+
+    img {
+      width: 35%;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+  }
+
+  .info {
+    color: #a8b1be;
+    font-size: 0.8rem;
+  }
+
+  .price {
+    font-size: 0.8rem;
+
+    span {
+      font-size: 2rem;
+      font-weight: 500;
+      margin-right: 3px;
+    }
+  }
+
+  .price:before {
+    position: relative;
+    top: -12px;
+    left: 0;
+    content: '\0024';
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  button {
+    display: block;
+    margin: 20px auto 0;
+    width: 20%;
+  }
+
+  button:focus {
+    outline: none;
+  }
+}
+
+.confirmBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0, 0.4);
+
+  form {
+    position: relative;
+    width: 30%;
+    box-shadow: none;
+
+    button {
+      width: auto;
+    }
+
+    .cross {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .cross:before {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background: url("../img/cross.svg") 50% 50% no-repeat;
+      background-size: 100%;
+    }
+  }
+}
+
+@import "media";

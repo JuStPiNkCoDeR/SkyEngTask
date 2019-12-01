@@ -1,0 +1,170 @@
+.productsList .product {
+  cursor: pointer;
+  transition: 0.3s;
+}
+.productsList .product:hover {
+  background: rgba(186, 186, 186, 0.15);
+}
+
+.cross {
+  cursor: pointer;
+}
+
+.shiny {
+  background-color: #0070C9;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  transition: 200ms ease-in;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+@keyframes sheen {
+  100% {
+    transform: rotateZ(60deg) translate(1em, -9em);
+  }
+}
+.shiny:hover {
+  transform: scale(1.2);
+}
+
+.shiny::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255, 255, 255, 0.5) 50%, rgba(229, 172, 142, 0));
+  transform: rotateZ(60deg) translate(-5em, 7.5em);
+}
+
+.shiny:hover::after, .shiny:focus::after {
+  animation: sheen 1s forwards;
+}
+
+body {
+  background: #85a5d4;
+  color: #5572d6;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.upperCase {
+  text-transform: uppercase;
+}
+
+form {
+  margin: 0 auto;
+  width: 60%;
+  background: #fff;
+  padding: 20px 10px;
+  box-shadow: 0 0 20px 0 #0009;
+  -webkit-box-shadow: 0 0 20px 0 #0009;
+  -moz-box-shadow: 0 0 20px 0 #0009;
+}
+form .productsList {
+  display: flex;
+  justify-content: space-around;
+}
+form .productsList .product {
+  width: 24%;
+}
+form .product {
+  text-align: center;
+}
+form .product img {
+  width: 35%;
+  margin-bottom: 10px;
+}
+form .product h3 {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+form .info {
+  color: #a8b1be;
+  font-size: 0.8rem;
+}
+form .price {
+  font-size: 0.8rem;
+}
+form .price span {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-right: 3px;
+}
+form .price:before {
+  position: relative;
+  top: -12px;
+  left: 0;
+  content: "$";
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+form button {
+  display: block;
+  margin: 20px auto 0;
+  width: 20%;
+}
+form button:focus {
+  outline: none;
+}
+
+.confirmBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+.confirmBlock form {
+  position: relative;
+  width: 30%;
+  box-shadow: none;
+}
+.confirmBlock form button {
+  width: auto;
+}
+.confirmBlock form .cross {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.confirmBlock form .cross:before {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: url("../img/cross.svg") 50% 50% no-repeat;
+  background-size: 100%;
+}
+
+@media screen and (max-width: 875px) {
+  form {
+    width: 80%;
+  }
+  form .productsList {
+    flex-direction: column;
+    justify-content: center;
+  }
+  form .productsList .product {
+    width: 100%;
+  }
+  form button {
+    width: 30%;
+  }
+
+  .confirmBlock form {
+    width: 65%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
